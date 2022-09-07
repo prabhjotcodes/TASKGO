@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="./index.js"></script>
+    <link href="./index.css" rel="stylesheet">
+    <!-- CUSTOM CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://kit-pro.fontawesome.com/releases/v6.1.2/css/pro.min.css" />
+    <title>Task GO - #1 Website for your daily tasks`</title>
+</head>
+<body>
+    <nav id="navs" class="flex-align-items vbn">
+        <span class="fontset" id="title">Task <span class="grad-txt">GO</span></span>
+    </nav>
+    <div class="automargin">
+        
+        <div  id="add-item" class="flex-align-items">
+            
+            <span onclick="edit_btn()" class="flex-justify-content flex-align-items" id="edit-btn">
+                <span id="i-icon"><i id="icon" class="fa-solid fa-pen-to-square"></i>
+                
+                </span> 
+            <span id="edt-txt">&nbspEdit</span></span>
+
+            <span onclick="addtask()" id="newtsk-btn" class="flex-align-items">
+                <i class="fa-2x fa-solid fa-circle-plus grad-txt"></i> <span id="addtsk">Add New Task</span>
+            </span>
+        </div>
+    </div>
+    <!-- <div style="color: #c0c0c0;" class="flex-justify-content flex-align-items">
+        Click Add to add new task
+    </div> -->
+    
+    <main id="main" class="d-flex">
+        
+
+        <!-- <div class="task-div">
+            
+            <div class="task-title">
+                <i class="fa-solid fa-circle-xmark tsk_del"></i>
+                <h4 class="grad-txt">Trip to Paris</h4>
+            </div>
+            <div class="task-content">
+                <p class="flex-align-items"><i class="fa-solid fa-do-not-enter del-chk"></i>
+                <span class="chk_span">
+                    <input class="styled-checkbox" type="checkbox" id="chk_1" checked> <label for="chk_1">Visit Church</label>
+                </span>
+                </p>
+                <p class="flex-align-items"><i class="fa-solid fa-do-not-enter del-chk"></i>
+                    <span class="chk_span">
+                        <input class="styled-checkbox" type="checkbox" id="chk_2"> <label for="chk_2">Shopping</label>
+                    </span>
+                </p>
+
+            </div>
+        </div>
+
+        <div class="task-div">
+            <div class="task-title">
+                <i class="fa-solid fa-circle-xmark tsk_del"></i>
+                <h4 class="grad-txt">My To Do List</h4>
+            </div>
+            <div class="task-content">
+                <p class="flex-align-items">
+                    <i class="fa-solid fa-do-not-enter del-chk"></i>
+                    <span class="chk_span">
+                        <input class="styled-checkbox" type="checkbox" id="chk_3"><label for="chk_3">Visit Supermarket</label>
+                    </span>
+                </p>
+                <p class="flex-align-items">
+                    <i class="fa-solid fa-do-not-enter del-chk"></i>
+                   <span class="chk_span">
+                    <input class="styled-checkbox" type="checkbox" id="chk_4"> <label for="chk_4">Buy Vegetables</label>
+                   </span>
+                </p>
+
+            </div>
+        </div> -->
+
+        <!-- <div class="task-div">
+            <div class="task-title">
+                <i class="fa-solid fa-circle-xmark tsk_del"></i>
+                <h4 class="grad-txt">Movies I Will Watch</h4>
+            </div>
+            <div class="task-content">
+                <p class="flex-align-items">
+                    <i class="fa-solid fa-do-not-enter del-chk"></i>
+                    <span class="chk_span"> 
+                        <input class="styled-checkbox" type="checkbox" id="chk_5"> <label for="chk_5">Stranger things 4</label>
+                    </span>
+                </p>
+                <p class="flex-align-items">
+                    <span class="chk_span">
+                        <i class="fa-solid fa-do-not-enter del-chk"></i>
+                        <input class="styled-checkbox" type="checkbox" id="chk_6" checked> <label for="chk_6">Avengers Endgame</label>
+                    </span>
+                </p>
+
+            </div>
+        </div> -->
+
+        <!-- <div class="task-div">
+            <div class="task-title">
+                <i class="fa-solid fa-circle-xmark tsk_del"></i>
+                <h4 class="grad-txt">Daily Morning Routine for...</h4>
+            </div>
+            <div class="task-content">
+                <p class="flex-align-items">
+                    <span class="chk_span">
+                        <i class="fa-solid fa-do-not-enter del-chk"></i>
+                        <input class="styled-checkbox" type="checkbox" id="chk_7" checked> <label for="chk_7">Wake up at 6 AM</label>
+                    </span> 
+                </p>
+                <p class="flex-align-items">
+                   <span class="chk_span">
+                    <i class="fa-solid fa-do-not-enter del-chk"></i>
+                    <input class="styled-checkbox" type="checkbox" id="chk_8"> <label for="chk_8">Sleep at 10 PM</label>
+                   </span>
+                </p>
+
+            </div>
+        </div> -->
+
+        
+
+
+
+    </main>
+
+    <div id="opacity-screen" class="flex-align-items flex-justify-content">
+        <div class="addtask-div">
+            <div id="tsk_title" class="task-title">
+                <h4 class="grad-txt">Add New Task <i onclick="close_tsk()" style="float: right;margin-right:8%;cursor:pointer;" class="fa-solid fa-xmark"></i></h4>
+            </div>
+            <div id="tsk-content" class="task-content" >
+                    
+                    <form id="form1">
+                        <div id="form">
+                            <input id="tsktitle" required type="text" placeholder="Task Title*" />
+                            <input id="tskname1" required type="text" placeholder="Task Name*" />
+                        </div>
+                       
+                    <span>
+                        <i id="in_add" onclick="tskinadd()" class="fa-solid fa-circle-plus grad-txt"></i>
+                    <i id="in_del" onclick="tskindel()" class="fa-solid fa-circle-xmark"></i>
+                    </span>
+                    
+                    <div>
+                        <button type="submit" onclick="tskadd()" id="addtsk-btn">+ Add Task</button>
+                    </div>
+                </form>  
+            </div>
+        </div>
+    </div>
+</body>
+</html>
