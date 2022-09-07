@@ -66,6 +66,7 @@ var del_chk = document.querySelectorAll(".del-chk");
 //     document.querySelector('#demo').addEventListener('click', third);
 
 var count = 0;
+var prabhjotsingh44=0;
 function tskinadd(){
     if(count<2){
         var div = document.createElement('input');
