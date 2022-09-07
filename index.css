@@ -159,7 +159,7 @@ input:checked{
   input[type="checkbox"]:checked + label{
     text-decoration: line-through;
     color: #c2c2c2;
-  } */
+  } prabhjotsingh44*/
 
   .styled-checkbox {
     /* // hide it */
